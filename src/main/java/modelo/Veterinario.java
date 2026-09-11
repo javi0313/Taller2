@@ -1,4 +1,3 @@
-
 package modelo;
 
 import modelo.Medicamento;
@@ -12,18 +11,16 @@ public class Veterinario {
     private String especialidad;
     private ArrayList<Consulta> consultas;
 
-        public Veterinario(String nombre, String documento, String especialidad) {
-            this.nombre = nombre;
-            this.documento = documento;
-            this.especialidad = especialidad;
-            
-        }
-    
+    public Veterinario(String nombre, String documento, String especialidad, ArrayList<Consulta> consultas) {
+        this.nombre = nombre;
+        this.documento = documento;
+        this.especialidad = especialidad;
+        this.consultas = consultas;
+    }
 
-public Veterinario(){
-    consultas = new ArrayList<>();
-    
-}
+    public Veterinario(){
+        consultas = new ArrayList<>();
+    }
 
     public String getNombre() {
         return nombre;
@@ -57,7 +54,7 @@ public Veterinario(){
         this.consultas = consultas;
     }
 
-public void recetar(Medicamento medicamento, Consulta consulta) {
+    public void recetar(Medicamento medicamento, Consulta consulta) {
         consulta.agregarMedicamento(medicamento);
     }
 

@@ -1,4 +1,3 @@
-
 package modelo;
 
 import java.util.ArrayList;
@@ -11,8 +10,19 @@ public class Consulta {
     private Veterinario vet;
     private ArrayList<Medicamento> medicamentos;
 
-    public Consulta(){
-        medicamentos = new ArrayList<>();
+    public Consulta(String fecha, String motivo, Mascota mascota, Veterinario vet, ArrayList<Medicamento> medicamentos){
+        this.fecha = fecha;
+        this.motivo = motivo;
+        this.mascota = mascota;
+        this.vet = vet;
+        this.medicamentos = medicamentos;
+    }
+
+    public Consulta(String fecha, String motivo, Mascota mascota, Veterinario vet) {
+        this.fecha = fecha;
+        this.motivo = motivo;
+        this.mascota = mascota;
+        this.vet = vet;
     }
 
     public String getFecha() {
@@ -54,20 +64,9 @@ public class Consulta {
     public void setMedicamentos(ArrayList<Medicamento> medicamentos) {
         this.medicamentos = medicamentos;
     }
-    
-    
-    
-    public Consulta(String fecha, String motivo, Mascota mascota, Veterinario vet) {
-        this.fecha = fecha;
-        this.motivo = motivo;
-        this.mascota = mascota;
-        this.vet = vet;
-        
-    }
-    
+
     public void agregarMedicamento(Medicamento medicamento) {
-    medicamentos.add(medicamento);
-}
-    
-    
+        medicamentos.add(medicamento);
+    }
+
 }
